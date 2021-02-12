@@ -1,0 +1,43 @@
+.therapistsTable {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.card {
+    position: relative;
+    /* width: 120%; */
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+    /* border-radius: 15px; */
+}
+
+.container {
+    max-width: 100%;
+}
+
+.trClass {
+    background-color: #94A73B;
+    color: white;
+}
+
+.btnClass {
+    color: #fff;
+    background-color: #94A73B;
+    border-color: #94A73B;
+}
+
+.login_btn {
+    color: white;
+    background-color: #94A73B;
+    width: 171px;
+    margin-right: 10px;
+}
+
+.login_btn:hover {
+    color: white;
+    background-color: #72AEC6;
+}

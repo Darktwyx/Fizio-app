@@ -1,0 +1,25 @@
+
+body {
+  background: white;
+}
+mat-form-field {
+  margin-right: 12px;
+}
+.primary {
+  color: red;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-designed {
+  color: white;
+  font-size: 25px;
+  /* background: #3f446a; */
+  /* #3dbced */
+  background: #90c641;
+  font-weight: 500;
+}

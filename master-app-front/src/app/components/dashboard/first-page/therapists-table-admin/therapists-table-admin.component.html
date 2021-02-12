@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12 overflow-auto p-3">
+            <table class="w-100 therapistsTable">
+                <tr>
+                    <th class="pl-2">
+                        Name
+                    </th>
+                    <th>
+                        Lastname
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Phone
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                </tr>
+                <ng-container *ngFor="let therapist of therapists">
+                    <tr>
+                        <td class="pl-2">
+                            {{therapist[0].first_name}}
+                        </td>
+                        <td>
+                            {{therapist[0].last_name}}
+                        </td>
+                        <td>
+                            {{therapist[0].email}}
+                        </td>
+                        <td>
+                            {{therapist[0].phone_number}}
+                        </td>
+                        <td>
+                            {{therapist[0].therapist_description}}
+                        </td>
+                        <td>
+                            <button *ngIf="therapist[0].active" type="button" class="btn btn-danger my-3" (click)="deactivate(therapist[0])">Deactivate</button>
+                            <button *ngIf="!therapist[0].active" type="button" class="btn btn-success my-3" (click)="activate(therapist[0])">Activate</button>
+                        </td>
+                    </tr>
+                </ng-container>
+            </table>
+        </div>
+    </div>
+</div>

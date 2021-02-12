@@ -1,0 +1,3 @@
+<app-therapists-table-user *ngIf="user != null && user.role == 0"></app-therapists-table-user>
+<app-therapists-table-admin *ngIf="user != null && user.role == 1"></app-therapists-table-admin>
+<app-reservations-table *ngIf="user != null &&  user.therapist_id != undefined"></app-reservations-table>

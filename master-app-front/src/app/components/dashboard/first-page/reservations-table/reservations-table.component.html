@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row mt-4">
+        <!-- <div class="col-12 text-center mt-2">
+            <h2>Reservations</h2>
+        </div> -->
+        <div class="col-12 col-lg-4 reservation" *ngFor="let reservation of reservations">
+            <div class="card">
+                <div class="card-header">
+                    {{reservation.date | date: 'dd/MM/yyyy'}} {{reservation.start_time | date: 'HH:mm:ss'}} - {{reservation.end_time | date: 'HH:mm:ss'}}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">User</h5>
+                    <table>
+                        <tr>
+                            <td>
+                                Name:
+                            </td>
+                            <td>
+                                {{reservation.username}} {{reservation.last_name}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Email:
+                            </td>
+                            <td>
+                                {{reservation.email}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Phone:
+                            </td>
+                            <td>
+                                {{reservation.phone_number}}
+                            </td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <h5 class="card-title">Therapy</h5>
+                    <table>
+                        <tr>
+                            <td>
+                                Name:
+                            </td>
+                            <td>
+                                {{reservation.therapy_name}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Description:
+                            </td>
+                            <td>
+                                {{reservation.description}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-footer">
+                    <button [disabled]="reservation.accepted" type="button" class="btn btn-success w-50" (click)="accept(reservation)">Accept</button>
+                    <button [disabled]="reservation.denied" type="button" class="btn btn-danger w-50" (click)="deny(reservation)">Decline</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

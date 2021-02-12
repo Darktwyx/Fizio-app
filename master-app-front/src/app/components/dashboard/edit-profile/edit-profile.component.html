@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <ng-container *ngIf="isUser">
+                <div class="card text-center mt-4">
+                    <div class="card-header">
+                        Edit user informations
+                    </div>
+                    <div class="card-body">
+                        <mat-form-field class="w-50">
+                            <mat-label>Name</mat-label>
+                            <input [(ngModel)]="user.name" matInput placeholder="Name">
+                        </mat-form-field>
+                        <mat-form-field class="w-50">
+                            <mat-label>Lastname</mat-label>
+                            <input [(ngModel)]="user.last_name" matInput placeholder="Lastname">
+                        </mat-form-field>
+                        <mat-form-field class="w-50">
+                            <mat-label>Email</mat-label>
+                            <input [(ngModel)]="user.email" matInput placeholder="Email">
+                        </mat-form-field>
+                        <mat-form-field class="w-50">
+                            <mat-label>Password</mat-label>
+                            <input [(ngModel)]="user.password" matInput type="password" placeholder="Password">
+                        </mat-form-field>
+                        <mat-form-field class="w-50">
+                            <mat-label>Phone number</mat-label>
+                            <input [(ngModel)]="user.phone_number" matInput placeholder="Phone number">
+                        </mat-form-field>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <button mat-raised-button color="primary" (click)="updateUser()">Save</button>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="!isUser">
+                <div class="card text-center mt-4">
+                    <div class="card-header">
+                        Edit therapist information
+                    </div>
+                    <div class="card-body">
+                        <mat-form-field class="w-50">
+                            <mat-label>Name</mat-label>
+                            <input [(ngModel)]="user.name" matInput placeholder="Name">
+                        </mat-form-field>
+                        <mat-form-field class="w-50">
+                            <mat-label>Lastname</mat-label>
+                            <input [(ngModel)]="user.last_name" matInput placeholder="Lastname">
+                        </mat-form-field>
+                        <mat-form-field class="w-50">
+                            <mat-label>Email</mat-label>
+                            <input [(ngModel)]="user.email" matInput placeholder="Email">
+                        </mat-form-field>
+                        <mat-form-field class="w-50">
+                            <mat-label>Password</mat-label>
+                            <input [(ngModel)]="user.password" matInput type="password" placeholder="Password">
+                        </mat-form-field>
+                        <mat-form-field class="w-50">
+                            <mat-label>Phone number</mat-label>
+                            <input [(ngModel)]="user.phone_number" matInput placeholder="Phone number">
+                        </mat-form-field>
+                        <mat-form-field class="w-50">
+                            <mat-label>Description</mat-label>
+                            <textarea [(ngModel)]="user.description" matInput placeholder="Description"></textarea>
+                        </mat-form-field>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <button mat-raised-button color="primary" (click)="updateTherapist()">Save</button>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

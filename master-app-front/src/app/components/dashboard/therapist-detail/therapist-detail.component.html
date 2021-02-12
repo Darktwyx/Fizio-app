@@ -1,0 +1,73 @@
+<div class="container mb-5 ">
+    <div class="row mt-5">
+        <div class="col-4 therapistInfo">
+            <img src="../../../assets/user-white.png" alt="user" width="100">
+            <h4>Name</h4>
+            <p>{{therapist.first_name}} {{therapist.last_name}}</p>
+            <hr>
+            <div class="info">
+                <div class="info_data">
+                    <div class="data">
+                        <h4>Email</h4>
+                        <p>{{therapist.email}}</p>
+                    </div>
+                    <div class="data">
+                        <h4>Phone number</h4>
+                        <p>{{therapist.phone_number}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 therapiesInfo pt-3 pb-4">
+            <div class="projects">
+                <h3>Make an appointment</h3>
+                <div class="projects_data">
+                    <div class='data'>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Therapy</mat-label>
+                            <mat-select [(value)]="selectedTherapy">
+                                <mat-option *ngFor="let therapy of therapist.therapies" [value]="therapy.therapy_id">{{therapy.name}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>Date of reservation</mat-label>
+                        <input matInput [matDatepicker]="picker" (dateChange)="addEvent('change', $event)">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker [calendarHeaderComponent]="exampleHeader"></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>From</mat-label>
+                        <mat-select [(value)]="selectedTimeFrom">
+                            <mat-option *ngFor="let time of timeFrom" [value]="time.value">{{time.text}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="w-100">
+                        <mat-label>To</mat-label>
+                        <mat-select [(value)]="selectedTimeTo">
+                            <mat-option *ngFor="let time of timeTo" [value]="time.value">{{time.text}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <!-- <div class="data">
+                        <h4>Most Viewed</h4>
+                        <p>dolor sit amet.</p>
+                    </div> -->
+                </div>
+            </div>
+            <button mat-raised-button class="w-100" color="primary" (click)="addReservation()">Add reservation</button>
+        </div>
+        <div class="col-4 commentsSection">
+            <div class="panel-body" *ngIf='showComments'>
+                <div class="media" *ngFor='let comment of comments'>
+                    <app-comment [comment]='comment' class="w-100"></app-comment>
+                </div>
+                <form #formData="ngForm" (ngSubmit)="saveComment(formData)">
+                    <textarea [(ngModel)]="comment" name='komentar' class="form-control textbox" placeholder="Enter your comment..." rows="3"></textarea>
+                    <br>
+                    <rating class='rating w-50' [(ngModel)]="rate" [max]="max" name="rating"></rating>
+                    <button type="submit" class="btn btn-info w-50" style='padding: 10px; margin-left: 20px'>Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

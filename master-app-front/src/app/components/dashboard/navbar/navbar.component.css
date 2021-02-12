@@ -1,0 +1,41 @@
+.blink-cooker {
+    height: 180px;
+    justify-content: center;
+    size: 100px;
+    margin-left: 5%
+}
+
+.btn-lg {
+    background-color: gray;
+    border: gray
+}
+
+.btn {
+    height: 30%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.active {
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.nav-font {
+    font-family: "Arial", Gadget, sans-serif;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+.link {
+    text-decoration: underline;
+    color: #72aec6;
+    cursor: pointer;
+}
+
+.navbar 
+{
+    border-bottom: 2px solid white;
+}

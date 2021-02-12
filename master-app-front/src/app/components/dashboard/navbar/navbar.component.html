@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <img src="/assets/Logo2.png" width="100px" style="display: flex; justify-content: center;margin: auto;" alt="" class="">
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topheader" aria-controls="topheader" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+
+    <div class="navbar-collapse nav-font" id="topheader">
+        <ul *ngIf="user != null && (user.role == 0 || user.therapist_id )" class="navbar-nav mr-auto ml-3">
+            <li class="nav-item" id="navItem1" [ngClass]="{'active': activeTab === 'navItem1'}">
+                <a *ngIf="user.therapist_id == undefined" class="nav-link" [routerLink]="['/dashboard/firstPage']" (click)="changeActiveTab1($event)">Therapists</a>
+                <a *ngIf="user.therapist_id != undefined" class="nav-link" [routerLink]="['/dashboard/firstPage']" (click)="changeActiveTab1($event)">Reservations</a>
+            </li>
+            <li *ngIf="user.therapist_id == undefined" class="nav-item" id="navItem4" [ngClass]="{'active': activeTab === 'navItem4'}">
+                <a class="nav-link" [routerLink]="['/dashboard/addArrangement']" (click)="changeActiveTab4($event)">Reservations</a>
+            </li>
+        </ul>
+
+        <div class="row ml-auto" style="margin-right: 2px">
+            <p *ngIf="user != null && (user.role == 0 || user.therapist_id != undefined)" style="margin-top:15px; color:white; padding-right: 15px;">
+                Logged as
+                <span [routerLink]="['/dashboard/edit']" class="link">{{user.name}} {{user.last_name}}</span>
+            </p>
+            <p *ngIf="user != null && user.role == 1" style="margin-top:15px; color: white; padding-right:15px;">Logged as admin</p>
+        </div>
+        <!-- <img src="/assets/userBrkic.jpg" style="border-radius: 50%; margin-left: 7px;margin-right: 10px;" width="50px" alt=""> -->
+        <button (click)="logout()" class="btn btn-outline-light">Log out</button>
+
+    </div>
+</nav>

@@ -1,0 +1,13 @@
+<hr>
+<div>
+    <img src="../../../../assets/blueuser-2.png" height="30px" width="30px" alt="" class="img-circle">
+    <rating readonly="true" class='rating' [ngModel]="comment.mark" max="5" name="rating"></rating>
+    <span class="text-muted pull-right">
+      <small class="text-muted">at {{comment.date | date:'dd.MM.yyyy HH:mm'}}h</small>
+  </span>
+</div>
+<div class="media-body">
+    <p>
+        {{comment.text}}
+    </p>
+</div>

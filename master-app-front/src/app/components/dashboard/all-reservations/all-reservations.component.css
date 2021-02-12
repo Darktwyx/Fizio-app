@@ -1,0 +1,50 @@
+.card {
+    position: relative;
+    /* width: 120%; */
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+    /* border-radius: 15px; */
+}
+
+.link {
+    text-decoration: underline;
+    color: #72aec6;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 100%;
+}
+
+.trClass {
+    background-color: #94A73B;
+    color: white;
+}
+
+.btnClass {
+    color: #fff;
+    background-color: #94A73B;
+    border-color: #94A73B;
+}
+
+.login_btn {
+    color: white;
+    background-color: #94A73B;
+    width: 171px;
+    margin-right: 10px;
+}
+
+.login_btn:hover {
+    color: white;
+    background-color: #72AEC6;
+}
+
+.waiting {}
+
+.denied {
+    color: red;
+}
+
+.accepted {
+    color: green;
+}
